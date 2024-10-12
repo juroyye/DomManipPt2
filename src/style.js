@@ -99,6 +99,31 @@ topMenuEl.addEventListener("click", (e)=> {
 })
  }
 
+ subMenuEl.addEventListener("click", (e)=> {
+  e.preventDefault()
+
+  if(e.target.tagName !== 'A'){
+    return
+}
+
+subMenuEl.style.top = "0";
+
+topMenuLinks.forEach(link => {
+  link.classList.remove("active");
+});
+
+let clickedLink = e.target.innerHTML
+
+let finalEL = document.createElement("h1")
+finalEL.textContent = "About!"
+
+if(clickedLink == "about"){
+  mainEl.innerHTML = finalEL
+} else {
+  mainEl.innerHTML = `<h1>${clickedLink}</h1>`
+}
+ })
+
  
 
 
