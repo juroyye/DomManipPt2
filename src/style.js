@@ -70,9 +70,19 @@ topMenuEl.addEventListener("click", (e)=> {
 
   if (e.target.classList.contains("active")) {
       e.target.classList.remove("active");
-  } else {
+    } else {
       e.target.classList.add("active");
-  }
+
+    }
+
+    const currentLink = e.target
+    const linkObj = menuLinks.find(link => link.text == currentLink.textContent)
+
+    if(linkObj.subLinks){
+      subMenuEl.style.top = "100%"
+    } else{
+        subMenuEl.style.top = "0%"
+    }
 }
  )
 
