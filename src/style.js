@@ -114,15 +114,13 @@ topMenuLinks.forEach(link => {
 
 let clickedLink = e.target.innerHTML
 
-let finalEL = document.createElement("h1")
-finalEL.textContent = "About!"
-
-if(clickedLink == "about"){
-  mainEl.innerHTML = finalEL
+if(clickedLink == 'about'){
+    mainEl.innerHTML = `<h1>About</h1>`
 } else {
   mainEl.innerHTML = `<h1>${clickedLink}</h1>`
 }
  })
+
 
  
 
