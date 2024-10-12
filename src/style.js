@@ -78,13 +78,28 @@ topMenuEl.addEventListener("click", (e)=> {
     const currentLink = e.target
     const linkObj = menuLinks.find(link => link.text == currentLink.textContent)
 
-    if(linkObj.subLinks){
+    if(linkObj && linkObj.subLinks){
+      constructSubLinkMenu(linkObj.subLinks)
       subMenuEl.style.top = "100%"
     } else{
         subMenuEl.style.top = "0%"
     }
 }
  )
+
+ function constructSubLinkMenu(subLinks){
+
+  subMenuEl.textContent = ''
+
+  subLinks.forEach(link => {
+    let subLink = document.createElement("a")
+ subLink.href = link.href
+ subLink.textContent = link.text
+ subMenuEl.append(subLink)
+})
+ }
+
+ 
 
 
 
