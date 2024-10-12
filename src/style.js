@@ -84,6 +84,15 @@ topMenuEl.addEventListener("click", (e)=> {
     } else{
         subMenuEl.style.top = "0%"
     }
+
+    let clickedLink = e.target.innerHTML
+
+if(clickedLink == 'about'){
+    mainEl.innerHTML = `<h1>About</h1>`
+}
+
+
+
 }
  )
 
@@ -114,11 +123,8 @@ topMenuLinks.forEach(link => {
 
 let clickedLink = e.target.innerHTML
 
-if(clickedLink == 'about'){
-    mainEl.innerHTML = `<h1>About</h1>`
-} else {
   mainEl.innerHTML = `<h1>${clickedLink}</h1>`
-}
+
  })
 
 
