@@ -58,7 +58,24 @@ subMenuEl.style.top = "0"
 const topMenuLinks = document.querySelectorAll("#top-menu a")
 
 topMenuEl.addEventListener("click", (e)=> {
-        
+        e.preventDefault()
+
+        if(e.target.tagName !== 'A'){
+             return
+        }
+
+    topMenuLinks.forEach(link => {
+      link.classList.remove("active");
+  });
+
+  if (e.target.classList.contains("active")) {
+      e.target.classList.remove("active");
+  } else {
+      e.target.classList.add("active");
+  }
 }
  )
+
+
+
 
